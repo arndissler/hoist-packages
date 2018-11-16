@@ -1,0 +1,13 @@
+{
+    "name": "test-data",
+    "devDependencies": {
+        "package-A": "0.1.0",
+        "package-B": "1.0.0",
+        "package-C": "<=2.0.0"
+    },
+    "dependencies": {
+        "dep-A": "0.1.0",
+        "dep-B": "1.0.0",
+        "dep-C": "<=2.0.0"
+    }
+}
