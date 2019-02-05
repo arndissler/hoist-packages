@@ -314,7 +314,29 @@ describe('Test hosting', () => {
 
                 expect(resolvedPackage).toBeDefined();
                 if (resolvedPackage) {
-                    expect(resolvedPackage.version).toBe('2.1.0');
+                    expect(resolvedPackage.version).toBe('^2.1.0');
+                }
+            });
+
+            test('from slightly similar versions', () => {
+                const testData: PackageHistogramItem[] = [
+                    {
+                        version: '5.9.0',
+                        usedByPackage: 'package-A',
+                        type: 'dependencies'
+                    },
+                    {
+                        version: '5.11.0',
+                        usedByPackage: 'package-B',
+                        type: 'devDependencies'
+                    }
+                ];
+
+                const resolvedPackage = resolvePackageVersion(testData);
+
+                expect(resolvedPackage).toBeDefined();
+                if (resolvedPackage) {
+                    expect(resolvedPackage.version).toBe('5.11.0');
                 }
             });
         });

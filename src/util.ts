@@ -139,6 +139,23 @@ function isPackageInfo(item: PackageInfo | undefined): item is PackageInfo {
     return item !== undefined;
 }
 
+function leftBiggerThanRight(a: string, b: string) {
+    const left = a.split('.').map(x => Number(x))
+    const right = b.split('.').map(x => Number(x));
+
+    if (left[0] > right[0]) {
+        return true;
+    }
+
+    if (left[0] === right[0] && left[1] > right[1]) {
+        return true;
+    }
+
+    return left[0] === right[0] &&
+        left[1] === right[1] &&
+        left[2] > right[2];
+}
+
 export function resolvePackageVersion(packageVersions: PackageHistogramItem[]): PackageHistogramItem | null {
     const withNormalizedVersions = packageVersions;
     // .map(
@@ -156,7 +173,10 @@ export function resolvePackageVersion(packageVersions: PackageHistogramItem[]): 
     let dependencyType: DependencyType = maximum.type;
 
     withNormalizedVersions.slice(1).forEach((item: PackageHistogramItem) => {
-        if (getRawVersionNumber(item.version) > getRawVersionNumber(maximum.version)) {
+        const left = getRawVersionNumber(item.version)
+        const right = getRawVersionNumber(maximum.version);
+
+        if (leftBiggerThanRight(left, right)) {
             maximum = item;
         }
 
