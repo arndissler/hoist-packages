@@ -1,13 +1,13 @@
 {
-  "name": "hoist-dev-packages",
-  "version": "0.0.0",
-  "description": "Check multiple package.json files for dev dependencies that can be hoisted when used in a monorepo environment.",
+  "name": "hoist-packages",
+  "version": "0.1.0",
+  "description": "Check multiple package.json files in a monorepo structure for dependencies that can be hoisted when used in a monorepo environment.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "watch:tests": "jest --watch",
     "start": "ts-node ./src/index.ts",
-    "build": "tsc --project"
+    "build": "tsc --project ./tsconfig.json"
   },
   "keywords": [
     "monorepo",
@@ -24,10 +24,14 @@
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "ts-jest": "^23.1.4",
-    "ts-node": "^7.0.1",
     "typescript": "^3.0.3"
   },
   "dependencies": {
+    "ts-node": "^7.0.1",
     "shelljs": "^0.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arndissler/hoist-packages.git"
   }
 }
