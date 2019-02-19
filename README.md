@@ -7,7 +7,8 @@ Parse all `package.json` files of each package of a monorepo and will collect th
 ## Usage
 
 ```sh
-npx hoist-packages /path/to/monorepo/
+const hoist = require('hoist-packages');
+await hoist('/path/to/monorepo/');
 ```
 
 or, while development:
