@@ -1,8 +1,9 @@
 {
   "name": "hoist-packages",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Check multiple package.json files in a monorepo structure for dependencies that can be hoisted when used in a monorepo environment.",
   "main": "dist/index.js",
+  "bin": "dist/index.js",
   "scripts": {
     "test": "jest",
     "watch:tests": "jest --watch",
@@ -17,7 +18,7 @@
   "author": "Arnd Issler <email@arndissler.net>",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^23.3.1",
+    "@types/jest": "^23.3.14",
     "@types/node": "^10.9.4",
     "@types/shelljs": "^0.8.0",
     "async-file": "^2.0.2",
@@ -27,8 +28,9 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "ts-node": "^7.0.1",
-    "shelljs": "^0.8.2"
+    "commander": "^2.19.0",
+    "shelljs": "^0.8.2",
+    "ts-node": "^7.0.1"
   },
   "repository": {
     "type": "git",
