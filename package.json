@@ -1,6 +1,6 @@
 {
   "name": "hoist-packages",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Check multiple package.json files in a monorepo structure for dependencies that can be hoisted when used in a monorepo environment.",
   "main": "dist/index.js",
   "bin": "dist/index.js",
@@ -21,13 +21,13 @@
     "@types/jest": "^23.3.14",
     "@types/node": "^10.9.4",
     "@types/shelljs": "^0.8.0",
-    "async-file": "^2.0.2",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "ts-jest": "^23.1.4",
     "typescript": "^3.0.3"
   },
   "dependencies": {
+    "async-file": "^2.0.2",
     "commander": "^2.19.0",
     "shelljs": "^0.8.2",
     "ts-node": "^7.0.1"
